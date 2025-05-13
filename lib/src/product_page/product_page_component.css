@@ -1,0 +1,22 @@
+.row {
+    display: flex;
+    gap: 24px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 8px 16px;
+}
+
+.description {
+    opacity: .72;
+    margin: 0 16px 16px;
+}
+
+.back {
+    font-size: 40px;
+    opacity: .72;
+    padding-bottom: 24px;
+    width: fit-content;
+}
