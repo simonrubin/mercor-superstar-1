@@ -1,4 +1,4 @@
-# mercor_job_task_2
+# mercor-superstar-1 sample repo
 
 A web app that uses [AngularDart](https://angulardart.xyz).
 
