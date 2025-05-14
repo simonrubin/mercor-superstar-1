@@ -11,11 +11,4 @@ import 'routes.dart';
   providers: [routerProviders],
   exports: [Routes],
 )
-class AppComponent implements OnInit{
-
-
-
-  void ngOnInit() {
-    print(RoutePaths.product.toUrl(parameters: {'productId': '1'}));
-  }
-}
+class AppComponent {}

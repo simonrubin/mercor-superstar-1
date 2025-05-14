@@ -1,17 +1,16 @@
 .row {
     display: flex;
     gap: 24px;
+    margin-bottom: 8px;
 }
 
 .name {
     font-size: 18px;
     font-weight: 500;
-    margin: 8px 16px;
 }
 
 .description {
     opacity: .72;
-    margin: 0 16px 16px;
 }
 
 .back {
@@ -19,4 +18,8 @@
     opacity: .72;
     padding-bottom: 24px;
     width: fit-content;
+}
+
+.price {
+    color: green;
 }

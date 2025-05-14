@@ -2,6 +2,8 @@ class Product {
 
     final int id;
 
+    int get price => id * 10 + 5;
+
     String get img => 'https://picsum.photos/id/$id/220/165';
 
     String get name => 'Product $id';

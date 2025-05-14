@@ -1,11 +1,30 @@
 <h1>Products</h1>
 
+<div class="toolbar">
+    <div class="input-wrapper">
+        <span class="icon">🔍</span>
+        <input type="text" placeholder="Search products..." (input)="onSearch"/>
+    </div>
+    <div class="sort-wrapper">
+        <label for="sort-by">Sort by:</label>
+        <select name="sort-by" (change)="onSort">
+            <option value="name-asc">Name ↑</option>
+            <option value="name-dsc">Name ↓</option>
+            <option value="price-asc">Price ↑</option>
+            <option value="price-dsc">Price ↓</option>
+        </select>
+    </div>
+</div>
+
 <div class="products" >
     <div 
         class="product" 
         [routerLink]="product.url"
-        *ngFor="let product of products">
-        <img [src]="product.img">
+        *ngFor="let product of filteredProducts">
+        <div class="img-wrapper">
+            <img [src]="product.img">
+            <div class="product-price">${{product.price}}</div>
+        </div>
         <div class="product-name">{{product.name}}</div>
         <div class="product-summary">{{product.summary}}</div>
     </div>
