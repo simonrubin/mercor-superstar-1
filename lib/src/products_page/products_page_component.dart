@@ -1,26 +1,29 @@
 import 'dart:html';
 import 'package:ngdart/angular.dart';
+import 'package:ngforms/ngforms.dart';
 import 'package:ngrouter/ngrouter.dart';
 import '/src/product_page/product.dart';
 
 @Component(
   selector: 'products-page',
-  directives: [coreDirectives, routerDirectives],
+  directives: [coreDirectives, formDirectives, routerDirectives],
   templateUrl: 'products_page_component.html',
   styleUrls: ['products_page_component.css'],
 )
-class ProductsPageComponent {
+class ProductsPageComponent implements OnActivate {
   static final products = List.generate(100, Product.new);
 
   var filteredProducts = products;
+  var sortBy = 'name-asc';
+  var q = '';
 
   void onSearch(Event e) {
-    final q = (e.target as InputElement).value ?? '';
-    filteredProducts = products.where((e) => e.name.contains(q)).toList();
+    q = (e.target as InputElement).value ?? '';
+    filteredProducts = products.where((e) => e.name.toLowerCase().contains(q.toLowerCase())).toList();
   }
 
   void onSort(Event e) {
-    final sortBy = (e.target as SelectElement).value;
+    sortBy = (e.target as SelectElement).value ?? '';
     switch(sortBy) {
       case 'name-asc':
         filteredProducts.sort((a,b) => a.name.compareTo(b.name));

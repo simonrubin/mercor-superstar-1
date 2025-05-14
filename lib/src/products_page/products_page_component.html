@@ -3,11 +3,11 @@
 <div class="toolbar">
     <div class="input-wrapper">
         <span class="icon">🔍</span>
-        <input type="text" placeholder="Search products..." (input)="onSearch"/>
+        <input type="text" placeholder="Search products..." (input)="onSearch" [(ngModel)]="q"/>
     </div>
     <div class="sort-wrapper">
         <label for="sort-by">Sort by:</label>
-        <select name="sort-by" (change)="onSort">
+        <select name="sort-by" (change)="onSort" [(ngModel)]="sortBy">
             <option value="name-asc">Name ↑</option>
             <option value="name-dsc">Name ↓</option>
             <option value="price-asc">Price ↑</option>
